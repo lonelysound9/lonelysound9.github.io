@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>匿名投稿網站</title>
+</head>
+<body>
+    <div class="container">
+        <h1>匿名投稿網站</h1>
+        <form id="post-form">
+            <textarea id="post-content" placeholder="在這裡輸入你的帖子..." required></textarea>
+            <button type="submit">提交帖子</button>
+        </form>
+        <div class="posts" id="posts-container">
+            <!-- 這裡將顯示匿名帖子 -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
