@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匿名投票網站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>匿名投票</h1>
+        <form id="vote-form">
+            <label>
+                <input type="radio" name="vote" value="選項1" required> 選項1
+            </label>
+            <label>
+                <input type="radio" name="vote" value="選項2"> 選項2
+            </label>
+            <label>
+                <input type="radio" name="vote" value="選項3"> 選項3
+            </label>
+            <button type="submit">提交投票</button>
+        </form>
+        <div id="result" class="hidden">
+            <h2>投票結果</h2>
+            <p id="result-message"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
