@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匿名投票網站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>匿名投票</h1>
+        <form id="vote-form">
+            <label>
+                <input type="radio" name="vote" value="選項1" required> 選項1
+            </label>
+            <label>
+                <input type="radio" name="vote" value="選項2"> 選項2
+            </label>
+            <label>
+                <input type="radio" name="vote" value="選項3"> 選項3
+            </label>
+            <button type="submit">提交投票</button>
+        </form>
+        <div id="result" class="hidden">
+            <h2>投票結果</h2>
+            <p id="result-message"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.hidden {
+    display: none;
+}
+
+#result {
+    margin-top: 20px;
+}
+document.getElementById('vote-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const selectedVote = document.querySelector('input[name="vote"]:checked').value;
+    document.getElementById('result-message').textContent = `您投票的選項是：${selectedVote}`;
+    document.getElementById('result').classList.remove('hidden');
+    document.getElementById('vote-form').reset();
+});
